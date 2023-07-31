@@ -32,6 +32,7 @@ int main()
     Character c1(name, role, hp1, ab1, db1, ac1);
     c1.print(cout);
 
+    cout << endl;
     cout << "Second character name: " << endl;
     cin >> name2;
     cout << name2 << "'s role? " << endl;

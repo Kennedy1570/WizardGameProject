@@ -64,3 +64,18 @@ int Character::damage(int amt)
     hitPoints -= amt;
     return hitPoints;
 }
+
+int Character::getHealth()
+{
+    return hitPoints;
+}
+
+string Character::getName()
+{
+    return name;
+}
+
+string Character::getRole()
+{
+    return role;
+}
