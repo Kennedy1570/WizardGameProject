@@ -52,6 +52,18 @@ void Character::attack(Character& otherCharacter)
         cout << "Damage: " << damageBonus << " + " << roll2 << " = " << dmgB << endl;
         otherCharacter.damage(dmgB);
         cout << otherCharacter.getName() << " has " << otherCharacter.getHealth() << " hitpoints remaining " << endl;
+        if(otherCharacter.hitPoints > 0)
+        {
+            int rollA = rand() % 10;
+            dmgB = damageBonus + rollA;
+            cout << "Damage: " << damageBonus << " + " << rollA << " = " << dmgB << endl;
+            otherCharacter.damage(dmgB);
+            cout << otherCharacter.getName() << " has " << otherCharacter.getHealth() << " hitpoints remaining " << endl;
+        }
+        else if(otherCharacter.hitPoints <= 0)
+        {
+            cout << "Game over! " << name << " wins" << endl;
+        }
         cout << endl;
     }else
     {

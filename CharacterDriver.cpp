@@ -50,7 +50,8 @@ int main()
     c2.print(cout);
     
 
-
+    c1.attack(c2);
+    c2.attack(c1);
 
     return 0;
 }
