@@ -50,14 +50,13 @@ void Character::attack(Character& otherCharacter)
     int roll1 = rand() % 20;
     attB = attackBonus + roll1;
     cout << "Attack Roll is: " << attackBonus << " + " << roll1 << " = " << attB;
-    if(attackBonus > otherCharacter.armorClass)
+    if(attB > otherCharacter.armorClass)
     {
         cout << "---> HIT!" << endl;
         int roll2 = rand() % 10;
         dmgB = damageBonus + roll2;
         cout << "Damage: " << damageBonus << " + " << roll2 << " = " << dmgB << endl;
         otherCharacter.damage(dmgB);
-        cout << otherCharacter.getName() << " has " << otherCharacter.getHealth() << " hitpoints remaining " << endl;
         if(otherCharacter.hitPoints > 0)
         {
             int rollA = rand() % 10;
