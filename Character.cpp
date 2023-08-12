@@ -4,13 +4,13 @@
 
 using namespace std;
 
-/// @brief 
-/// @param cName 
-/// @param cRole 
-/// @param HP 
-/// @param AB 
-/// @param DB 
-/// @param AC 
+/// @brief parameterized constructor
+/// @param cName variable to hold name
+/// @param cRole variable to hold role
+/// @param HP variable to hold hit points
+/// @param AB variable to hold attack bonus
+/// @param DB variable to hold damage bonus
+/// @param AC variable to hold armor class
 Character::Character(string cName, string cRole, int HP, int AB, int DB, int AC)
 {
     name = cName;
@@ -21,6 +21,8 @@ Character::Character(string cName, string cRole, int HP, int AB, int DB, int AC)
     armorClass = AC;
 }
 
+/// @brief method to print out character object
+/// @param out cout
 void Character::print(ostream& out)
 {
     out << "Character Summary: " << std::endl;
@@ -35,6 +37,10 @@ void Character::print(ostream& out)
     out << endl;
 }
 
+
+/// @brief Function to perform attack on a character by rolling dice multiple times
+///until other Characters hitpoints reaches zero
+/// @param otherCharacter refernece variable to represent character being attacked
 void Character::attack(Character& otherCharacter)
 {
     int attB, dmgB;
@@ -71,22 +77,31 @@ void Character::attack(Character& otherCharacter)
     }
 }
 
+/// @brief function to return damage done to hit points of character that was attacked by subtracting amout from hitpoints
+/// @param amount 
+/// @return new hit points
 int Character::damage(int amt)
 {
     hitPoints -= amt;
     return hitPoints;
 }
 
+/// @brief function to return characters hit points
+/// @return hitpoints
 int Character::getHealth()
 {
     return hitPoints;
 }
 
+/// @brief funtion to return characters name
+/// @return name
 string Character::getName()
 {
     return name;
 }
 
+/// @brief Function to return characters role
+/// @return role
 string Character::getRole()
 {
     return role;

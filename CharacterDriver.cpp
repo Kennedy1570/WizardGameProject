@@ -12,6 +12,7 @@ int main()
     string role;
     int hp1, ab1, db1, ac1;
 
+    ///@brief second character variables
     string name2;
     string role2;
     int hp2, ab2, db2, ac2;
@@ -29,6 +30,7 @@ int main()
     cout << name << " the " << role << "'s armor class? " << endl;
     cin >> ac1;
 
+    ///Character1 Object
     Character c1(name, role, hp1, ab1, db1, ac1);
     c1.print(cout);
 
@@ -46,6 +48,7 @@ int main()
     cout << name2 << " the " << role2 << "'s armor class? " << endl;
     cin >> ac2;
 
+    ///Character2 Object
     Character c2(name2, role2, hp2, ab2, db2, ac2);
     c2.print(cout);
     
